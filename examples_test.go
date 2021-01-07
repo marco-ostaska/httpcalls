@@ -35,10 +35,14 @@ func ExampleAPIData_NewRequest() {
 		log.Fatalln(err)
 	}
 
-	fmt.Println(facts[0].Text)
+	for _, v := range facts {
+		if v.ID == "58e008800aac31001185ed07" {
+			fmt.Println(v.Text)
+		}
+	}
 
 	// Output:
-	// Cats make about 100 different sounds. Dogs make only about 10.
+	// Wikipedia has a recording of a cat meowing, because why not?
 
 }
 
