@@ -51,7 +51,6 @@ type APIData struct {
 // DeleteRequest make delete call to sl1 API
 func (a *APIData) DeleteRequest() error {
 	return a.httpcalls("DELETE")
-
 }
 
 // NewPost make new post to sl1 API
@@ -98,7 +97,8 @@ func (a *APIData) httpcalls(method string) error {
 	if err := isReachable(a.URL); err != nil {
 		return err
 	}
-	http.DefaultTransport.(*http.Transport).TLSClientConfig = &tls.Config{InsecureSkipVerify: Insecure}
+	httpTransport := http.DefaultTransport
+	httpTransport.(*http.Transport).TLSClientConfig = &tls.Config{InsecureSkipVerify: Insecure}
 	url := a.URL + a.API + a.ARGS
 
 	client := &http.Client{}
