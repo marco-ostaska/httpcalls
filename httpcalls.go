@@ -71,6 +71,7 @@ func (a *APIData) NewRequest(v interface{}) error {
 // isReachable checks if url is reachable
 // used for internal purposes only
 func isReachable(url string) error {
+	// #nosec - insecure set to false by default, will only by set to true is explicit specify.
 	tr := &http.Transport{
 		TLSClientConfig: &tls.Config{InsecureSkipVerify: Insecure},
 	}
@@ -98,6 +99,7 @@ func (a *APIData) httpcalls(method string) error {
 		return err
 	}
 	httpTransport := http.DefaultTransport
+	// #nosec - insecure set to false by default, will only by set to true is explicit specify.
 	httpTransport.(*http.Transport).TLSClientConfig = &tls.Config{InsecureSkipVerify: Insecure}
 	url := a.URL + a.API + a.ARGS
 
