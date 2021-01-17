@@ -2,6 +2,7 @@
 
 [![GoDoc](https://godoc.org/github.com/marco-ostaska/httpcalls?status.svg)](https://godoc.org/github.com/marco-ostaska/httpcalls)
 [![Go Report Card](https://goreportcard.com/badge/github.com/marco-ostaska/httpcalls)](https://goreportcard.com/report/github.com/marco-ostaska/httpcalls)
+[![Build Status](https://travis-ci.com/marco-ostaska/httpcalls.svg?branch=main)](https://travis-ci.com/marco-ostaska/httpcalls)
 
     import "github.com/marco-ostaska/httpcalls"
 
