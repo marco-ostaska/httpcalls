@@ -34,16 +34,10 @@ func ExampleAPIData_NewRequest() {
 	if err := a.NewRequest(&facts); err != nil {
 		log.Fatalln(err)
 	}
-
-	for _, v := range facts {
-		if v.ID == "58e008800aac31001185ed07" {
-			fmt.Println(v.Text)
-		}
-	}
+	fmt.Println(facts[0].Status.Verified)
 
 	// Output:
-	// Wikipedia has a recording of a cat meowing, because why not?
-
+	// true
 }
 
 func ExampleAPIData_QueryGraphQL() {
